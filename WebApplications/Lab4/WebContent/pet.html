@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pet Survey</title>
+<style>
+<!--
+body {
+	font-family: sans-serif;
+}
+
+.leftcol {
+	margin-left: 50px;
+	width: 200px;
+}
+
+.rightcol {
+	width: 400px;
+	float: right;
+	text-align: left;
+}
+-->
+</style>
+</head>
+<body>
+<form method="post" action="SurveyServlet">
+	<fieldset>
+		<legend>What is your favorite type of pet? </legend>
+		<div class="rightcol">
+			<label>
+			<input type="radio" name="animal" value="fish"/>Fish
+			</label><br/>
+			<label>
+			<input type="radio" name="animal" value="other"/>Other
+			</label><br/>
+			<label>
+			<input type="radio" name="animal" value="none" checked="checked"/>None
+			</label>
+			
+		</div>
+		<div class="leftcol">
+			<label>
+			<input type="radio" name="animal" value="dog"/>Dog</label>
+			<br/>
+			<label>
+			<input type="radio" name="animal" value="cat"/>Cat
+			</label>
+			<br/>
+			<label>
+			<input type="radio" name="animal" value="bird"/>Bird
+			</label><br/>
+			<label>
+			<input type="radio" name="animal" value="snake"/>Snake
+			</label>
+		</div>
+	</fieldset>
+
+	<p><input type="submit" value="Submit"/>
+	<input type="reset"/>
+	</p>
+</form>
+</body>
+</html>

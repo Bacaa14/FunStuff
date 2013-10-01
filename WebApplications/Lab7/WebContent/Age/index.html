@@ -1,0 +1,53 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>Alex Baca's Age</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="My Age in Years and Days">
+</head>
+<body>
+	<div id="content">
+		<p id="count"></p>
+	</div>
+	<div class="footer">
+		<p>Created by <a href="http://cs.wlu.edu/~bacaa/">Alexander Baca</a></p>
+	</div>
+  <script>
+	var before="Graduation!"
+	var current=""
+	var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+
+	function countdown(yr,m,d){
+	theyear=yr;themonth=m;theday=d
+	var today=new Date()
+	var todayy=today.getYear()
+	if (todayy < 1000)
+		todayy+=1900
+		var todaym=today.getMonth()
+		var todayd=today.getDate()
+		var todayh=today.getHours()
+		var todaymin=today.getMinutes()
+		var todaysec=today.getSeconds()
+		var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
+		futurestring=montharray[m-1]+" "+d+", "+yr
+		dd=-Date.parse(futurestring)+Date.parse(todaystring)
+		dyear=Math.floor(dd/(60*60*1000*24*365)*1)
+		dday=Math.floor((dd%(60*60*1000*24*365))/(60*60*1000*24)*1)
+		dhour=Math.floor(((dd%(60*60*1000*24*365))%(60*60*1000*24))/(60*60*1000)*1)
+		dmin=Math.floor((((dd%(60*60*1000*24*365))%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
+		dsec=Math.floor(((((dd%(60*60*1000*24*365))%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
+		if(dday==0&&dhour==0&&dmin==0&&dsec==1){
+			document.forms.count.count2.value=current
+			return
+		}
+		else
+			document.getElementById('count').innerHTML ="I am " + dyear+ " years, "+dday+ " days, "+dhour+" hours, "+dmin+" minutes, and "+dsec + " old."
+			setTimeout("countdown(theyear,themonth,theday)",1000)
+		}
+		countdown(1990,11,23)
+	</script>
+</body>
+</html>

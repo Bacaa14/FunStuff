@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Alexander Baca's Sandwhich Maker" />
+<meta name="keywords" content="cs335, sandwhich, baca" />
+<title>Baca's Sandwhich Maker</title>
+<style type="text/css">
+h1 {
+	border-bottom: thin black solid;
+	border-top: thin black solid;
+	background: #AAA;
+}
+
+input,select {
+	margin-left: 15px;
+}
+
+label {
+	display: block;
+	margin: 3px;
+	padding: 10px 0px 10px 0px;
+	text-align: right;
+}
+
+table {
+	background: #FFF;
+	display: block;
+}
+
+table.main {
+	border: thin black solid;
+}
+</style>
+<link rel="shortcut icon" href="favicon.ico" />
+<script>
+	function validateForm() {
+		var x = document.forms["sandwichForm"]["base"].value;
+		var y = document.forms["sandwichForm"]["cheese"].value;
+		alert("Either meat or cheese must be filled out");
+		if ((x == null || x == "") && (y == null || y == "")) {
+			alert("Either meat or cheese must be filled out");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>Sandwhich Maker</h1>
+	<fieldset>
+		<legend>Design your own sandwhich!</legend>
+		<form action="SandwichServlet" onsubmit="return validateForm()" method="get"
+			 name="sadwichForm">
+			<table>
+				<tr>
+					<td><label for="name"> Customer Name: </label></td>
+					<td><input name="name" id="name" type="text"></td>
+				</tr>
+				<tr>
+					<td><label> Bread: </label></td>
+					<td><select name="bread">
+							<option value="White" selected="selected">White Bread</option>
+							<option value="Wheat">Wheat Bread</option>
+							<option value="Roll">Roll</option>
+					</select></td>
+				</tr>
+
+				<tr>
+					<td><label> Base: </label></td>
+					<td><select size="3" name="base">
+							<option value="turkey">Turkey</option>
+							<option value="ham">Ham</option>
+							<option value="roast beef">Roast Beef</option>
+							<option value="tuna">Tuna</option>
+							<option value="veggies">Veggies</option>
+					</select></td>
+				</tr>
+
+				<tr>
+					<td><label> Cheese: </label></td>
+					<td><select size="3" name="cheese">
+							<option value="swiss">Swiss</option>
+							<option value="american">American</option>
+							<option value="provolone">Provolone</option>
+							<option value="none">None</option>
+					</select></td>
+				</tr>
+
+				<tr>
+					<td>Condiments/Veggies:</td>
+					<td>
+						<table class="main">
+							<tr>
+								<td><label>Mustard: <input type="checkbox"
+										name="condiment" value="mustard" /></label> <label>Mayo:<input
+										type="checkbox" name="condiment" value="mayo" /></label> <label>Oil:<input
+										type="checkbox" name="condiment" value="oil" /></label> <label>Vinegar:<input
+										type="checkbox" name="condiment" value="vinegar" /></label> <label>Lettuce:<input
+										type="checkbox" name="condiment" value="lettuce" /></label> <label>Tomato:<input
+										type="checkbox" name="condiment" value="tomato" /></label></td>
+								<td><label>Pickles:<input type="checkbox"
+										name="condiment" value="pickles" /></label> <label>Onions:<input
+										type="checkbox" name="condiment" value="onions" /></label> <label>Hot
+										Peppers:<input type="checkbox" name="condiment"
+										value="hot peppers" />
+								</label></td>
+							</tr>
+						</table>
+				<tr>
+					<td><label class="radiogroup"> For here: <input
+							type="radio" name="location" value="here" /> To go: <input
+							type="radio" name="location" value="to go" />
+					</label></td>
+				</tr>
+				<tr>
+					<td><label for="notes"> Customer Notes: </label></td>
+					<td><textarea name="notes" id="notes"> </textarea></td>
+				</tr>
+			</table>
+			<input type="submit" value="Submit Order" /> <input type="reset" />
+		</form>
+	</fieldset>
+
+</body>
+</html>

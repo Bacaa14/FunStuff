@@ -1,0 +1,41 @@
+body {
+  display: block;
+  margin-top: 0;
+  text-align: center;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+body #answer {
+  font-weight: bold;
+  font-size: 250px;
+  margin-bottom: 0px;
+  margin-top: 0;
+}
+body #caption {
+  font-size: 80px;
+  line-height: 100px;
+  margin-top: 40px;
+  letter-spacing: -5px;
+  word-spacing: 10px;
+}
+body #count {
+  font-size: 60px;
+  line-height: 100px;
+  margin-top: 40px;
+  letter-spacing: -5px;
+  word-spacing: 10px;
+}
+.footer {
+  position: absolute;
+  bottom: 10px;
+  right: 25px;
+  font-size: 16px;
+  margin: 0;
+}
+.footer a {
+  color: black;
+}
+.footer p {
+  margin-bottom: 0px;
+  text-align: right;
+}
